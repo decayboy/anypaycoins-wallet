@@ -1,6 +1,6 @@
 # AnyPayCoins offline wallets
 
-    Api endpoint: *http://127.0.0.1:8099*
+    Api endpoint: http://127.0.0.1:8099
     Authorisation: Bearer token
 
 ## Settings
