@@ -1,1 +1,5 @@
 .idea
+
+bin/conf/api.conf
+bin/conf/geth-api.conf
+data
