@@ -1,0 +1,4 @@
+bin/api filter=lfs diff=lfs merge=lfs -text
+bin/geth-api filter=lfs diff=lfs merge=lfs -text
+bin/goose filter=lfs diff=lfs merge=lfs -text
+bin/wallet filter=lfs diff=lfs merge=lfs -text

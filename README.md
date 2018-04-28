@@ -1,0 +1,3 @@
+## Deploy
+
+    $ export GOPATH=$HOME

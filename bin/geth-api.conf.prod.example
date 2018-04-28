@@ -1,0 +1,9 @@
+appname = "geth-api"
+httpport = 8081
+runmode ="prod"
+autorender = false
+recoverpanic = false
+
+[wallet]
+accesstoken = "secret"
+keystore = "/keystore"
