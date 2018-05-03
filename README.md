@@ -5,6 +5,10 @@
 
 ## Settings
 
+### Install Git LFS
+    
+    https://github.com/git-lfs/git-lfs/wiki/Installation
+
 ### Set environment variables (default values below):
    
 #### PostgreSQL
