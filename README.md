@@ -33,7 +33,7 @@
 #### Bitcoin Cash
     
     BITCOIN_CASH_RPC_ALLOWIP=0.0.0.0/0
-    BITCOIN_CASH_RPC_USER=rpcuse
+    BITCOIN_CASH_RPC_USER=rpcuser
     BITCOIN_CASH_RPC_PASSWORD=rpcpassword
     BITCOIN_CASH_RPC_PORT=8332/tcp
     
