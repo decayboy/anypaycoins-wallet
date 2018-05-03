@@ -22,6 +22,7 @@
     
     ETHEREUM_RPC_ADDR=0.0.0.0
     ETHEREUM_RPC_PORT=8545
+    ETHEREUM_TESTNET=
     
 #### Bitcoin
     
@@ -29,6 +30,7 @@
     BITCOIN_RPC_USER=rpcuser
     BITCOIN_RPC_PASSWORD=rpcpassword
     BITCOIN_RPC_PORT=8333/tcp
+    BITCOIN_TESTNET=0
     
 #### Bitcoin Cash
     
@@ -36,6 +38,7 @@
     BITCOIN_CASH_RPC_USER=rpcuser
     BITCOIN_CASH_RPC_PASSWORD=rpcpassword
     BITCOIN_CASH_RPC_PORT=8332/tcp
+    BITCOIN_CASH_TESTNET=0
     
 ### Config files
 

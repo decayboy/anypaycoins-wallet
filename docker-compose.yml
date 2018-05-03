@@ -22,12 +22,14 @@ services:
       - geth-api:apc-geth-api
       - bitcoin:apc-bitcoin
       - bitcoin-cash:apc-bitcoin-cash
+      - ethereum:apc-ethereum
     depends_on:
       - db
       - goose
       - geth-api
       - bitcoin
       - bitcoin-cash
+      - ethereum
 
   geth-api:
     image: alpine:3.7
@@ -76,6 +78,7 @@ services:
     image: ethereum/client-go:alpine
     restart: always
     command:
+      ${ETHEREUM_TESTNET:-}
       --rpc
       --rpcaddr '${ETHEREUM_RPC_ADDR:-0.0.0.0}'
       --rpcport ${ETHEREUM_RPC_PORT:-8545}
@@ -91,6 +94,7 @@ services:
     restart: always
     command:
       -connect=0
+      -testnet=${BITCOIN_TESTNET:-0}
       -rest
       -rpcallowip=${BITCOIN_RPC_ALLOWIP:-0.0.0.0/0}
       -rpcuser=${BITCOIN_RPC_USER:-rpcuser}
@@ -106,6 +110,7 @@ services:
     restart: always
     command:
       -connect=0
+      -testnet=${BITCOIN_CASH_TESTNET:-0}
       -rpcallowip=${BITCOIN_CASH_RPC_ALLOWIP:-0.0.0.0/0}
       -rpcuser=${BITCOIN_CASH_RPC_USER:-rpcuser}
       -rpcpassword=${BITCOIN_CASH_RPC_PASSWORD:-rpcpassword}
