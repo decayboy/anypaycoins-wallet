@@ -51,6 +51,7 @@ services:
     image: alpine:3.7
     working_dir: /wallet
     command: /bin/sh -c "/wallet/goose -dir \"/wallet/migrations\" \"${DB_DRIVER:-postgres}\" \"${DB_OPEN:-host=db user=postgres password=12345 dbname=wallet sslmode=disable}\" up"
+    restart: on-failure
     volumes:
       - ./bin:/wallet
     links:
@@ -73,6 +74,7 @@ services:
   ethereum:
     container_name: apc-ethereum
     image: ethereum/client-go:alpine
+    restart: always
     command:
       --rpc
       --rpcaddr '${ETHEREUM_RPC_ADDR:-0.0.0.0}'
@@ -86,6 +88,7 @@ services:
   bitcoin:
     container_name: apc-bitcoin
     image: ruimarinho/bitcoin-core:0.16.0-alpine
+    restart: always
     command:
       -connect=0
       -rest
@@ -100,6 +103,7 @@ services:
   bitcoin-cash:
     container_name: apc-bitcoin-cash
     image: uphold/bitcoin-abc:0.16.2-alpine
+    restart: always
     command:
       -connect=0
       -rpcallowip=${BITCOIN_CASH_RPC_ALLOWIP:-0.0.0.0/0}
