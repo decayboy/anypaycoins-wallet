@@ -47,6 +47,7 @@ services:
       - ./migrations:/wallet/migrations
       - ./conf:/wallet/conf
       - ./data/ethereum/.ethereum/keystore:/keystore
+      - ./data/ethereum/.ethereum/testnet/keystore:/keystore-testnet
     links:
       - ethereum:apc-ethereum
     depends_on:
