@@ -1,4 +1,8 @@
-bin/api filter=lfs diff=lfs merge=lfs -text
-bin/geth-api filter=lfs diff=lfs merge=lfs -text
-bin/goose filter=lfs diff=lfs merge=lfs -text
-bin/wallet filter=lfs diff=lfs merge=lfs -text
+bin/alpine/api filter=lfs diff=lfs merge=lfs -text
+bin/alpine/geth-api filter=lfs diff=lfs merge=lfs -text
+bin/alpine/goose filter=lfs diff=lfs merge=lfs -text
+bin/alpine/wallet filter=lfs diff=lfs merge=lfs -text
+bin/ubuntu/api filter=lfs diff=lfs merge=lfs -text
+bin/ubuntu/geth-api filter=lfs diff=lfs merge=lfs -text
+bin/ubuntu/goose filter=lfs diff=lfs merge=lfs -text
+bin/ubuntu/wallet filter=lfs diff=lfs merge=lfs -text

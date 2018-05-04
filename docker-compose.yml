@@ -13,7 +13,9 @@ services:
     ports:
       - 8099:8080
     volumes:
-      - ./bin:/wallet
+      - ./bin/alpine:/wallet
+      - ./migrations:/wallet/migrations
+      - ./conf:/wallet/conf
       - ./data/log:/var/log
       - ./etc/crontab.conf:/var/spool/cron/crontabs/root
     links:
@@ -41,7 +43,9 @@ services:
       - GOPATH=$HOME
       - GETH_API_CONF=${GETH_API_CONF:-/wallet/conf/geth-api.conf}
     volumes:
-      - ./bin:/wallet
+      - ./bin/alpine:/wallet
+      - ./migrations:/wallet/migrations
+      - ./conf:/wallet/conf
       - ./data/ethereum/.ethereum/keystore:/keystore
     links:
       - ethereum:apc-ethereum
@@ -55,7 +59,9 @@ services:
     command: /bin/sh -c "/wallet/goose -dir \"/wallet/migrations\" \"${DB_DRIVER:-postgres}\" \"${DB_OPEN:-host=db user=postgres password=12345 dbname=wallet sslmode=disable}\" up"
     restart: on-failure
     volumes:
-      - ./bin:/wallet
+      - ./bin/alpine:/wallet
+      - ./migrations:/wallet/migrations
+      - ./conf:/wallet/conf
     links:
       - db:apc-wallet-db
     depends_on:

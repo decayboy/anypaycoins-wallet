@@ -48,8 +48,8 @@
 
     Create config files and make changes
 
-    $ cp ./bin/conf/api.conf.example ./bin/conf/api.conf
-    $ cp ./bin/conf/geth-api.conf.example ./bin/conf/geth-api.conf
+    $ cp ./conf/api.conf.example ./conf/api.conf
+    $ cp ./conf/geth-api.conf.example ./conf/geth-api.conf
     
 ## Run
 
