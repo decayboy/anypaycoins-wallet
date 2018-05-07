@@ -125,3 +125,17 @@ services:
       -server
     volumes:
       - ./data/bitcoin-cash/.bitcoin:/home/bitcoin/.bitcoin
+
+  pgadmin:
+    container_name: apc-wallet-pgadmin
+    restart: on-failure
+    links:
+      - db:wallet-db
+    image: fenglc/pgadmin4
+    volumes:
+       - ./data/pgadmin:/root/.pgadmin
+    ports:
+      - "8098:5050"
+    environment:
+      DEFAULT_USER: "${POSTGRES_USER:-postgres}@db"
+      DEFAULT_PASSWORD: "${POSTGRES_PASSWORD:-12345}"
